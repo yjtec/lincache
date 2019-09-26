@@ -2,6 +2,8 @@
 
 namespace Yjtec\Lincache;
 
+use Exception;
+
 /**
  * 入口
  *

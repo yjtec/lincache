@@ -3,7 +3,7 @@
 namespace Yjtec\Lincache;
 
 /**
- * Description of Cache
+ * 入口
  *
  * @author Administrator
  */

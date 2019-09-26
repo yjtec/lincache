@@ -51,7 +51,7 @@ class Cache {
     }
 
     private static function connect() {
-        $guid = Tool::toGuidString(self::$config);
+        $guid = \Yjtec\Lintools\Tools::toGuidString(self::$config);
         if (!isset(self::$dbInstance[$guid])) {
             $dbType = ucwords(strtolower(self::$config['DBTYPE'] ? self::$config['DBTYPE'] : 'Redis'));
             $class = '\\Yjtec\Lincache\\Cache\\' . $dbType;

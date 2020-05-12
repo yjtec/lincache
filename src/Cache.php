@@ -55,7 +55,7 @@ class Cache {
     private static function connect() {
         $guid = \Yjtec\Lintools\Tools::toGuidString(self::$config);
         if (!isset(self::$dbInstance[$guid])) {
-            $dbType = ucwords(strtolower(self::$config['DBTYPE'] ? self::$config['DBTYPE'] : 'Redis'));
+            $dbType = ucwords(strtolower(isset(self::$config['DBTYPE'])&&self::$config['DBTYPE'] ? self::$config['DBTYPE'] : 'Redis'));
             $class = '\\Yjtec\Lincache\\Cache\\' . $dbType;
             if (class_exists($class)) {// 检查驱动类
                 self::$dbInstance[$guid] = new $class(self::$config);
